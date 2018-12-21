@@ -52,30 +52,53 @@ namespace Vidly.Controllers
 
 
 
+//
+//        public ActionResult Random()
+//        {
+//            var  movie = new Movie() {Name="The Killer!!!!"};
+//            var viewResult = new ViewResult();
+//           // viewResult.ViewData.Model
+//
+//            var Customers = new List<Customer>
+//            {
+//
+//                new Customer {Name = "Customer 1"},
+//                new Customer {Name = "Customer 2"}
+//            };
+//
+//
+//            var viewModel = new RandomMovieViewModel
+//            {
+//                Movie = movie,
+//                customers = Customers
+//
+//
+//            };
+//                
+//            return View(viewModel);
+//        }
 
         public ActionResult Random()
+
         {
-            var  movie = new Movie() {Name="The Killer!!!!"};
-            var viewResult = new ViewResult();
-           // viewResult.ViewData.Model
-
-            var Customers = new List<Customer>
+            var customer = new Customer() {Name = "Customer"};
+            var viewResult = new  ViewResult();
+            var Customer = new List<Customer>
             {
+                new Customer { Name="John Smith"},
+                new  Customer {Name =  "Marrry Williams"}
+        
 
-                new Customer {Name = "Customer 1"},
-                new Customer {Name = "Customer 2"}
             };
 
-
-            var viewModel = new RandomMovieViewModel
+            var viewModel =  new RandomMovieViewModel
             {
-                Movie = movie,
-                customers = Customers
-
-
+  //              Movie =  movie,
+                customers =Customer 
             };
-                
+
             return View(viewModel);
+
         }
     }
 

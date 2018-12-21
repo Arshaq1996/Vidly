@@ -21,7 +21,8 @@
 @* *@
 @* </ul> *@
 
-
+@* page1 Code  *@
+me
 @if (Model.customers.Count==0)
 
 {
@@ -38,4 +39,9 @@ else
             <li> @customer_name.Name</li>
         }
     </ul>
+}
+
+@if (Model.customers.Count==0)
+{
+    <table class="table table-bordered table-hover"> @Model.</table>
 }
