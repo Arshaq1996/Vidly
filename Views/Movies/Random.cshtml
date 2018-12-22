@@ -6,9 +6,9 @@
 }
 
 @{
-    var ClassName = Model.customers.Count > 0? "Popular" : null;
+//    var ClassName = Model.customers.Count > 0? "Popular" : null;
 }
-<h2 class="@ClassName">@Model.Movie.Name</h2>
+@* <h2 class="@ClassName">@Model.Movie.Name</h2> *@
 
 @* //@Model.customers *@
 @* *@
@@ -22,26 +22,56 @@
 @* </ul> *@
 
 @* page1 Code  *@
-me
-@if (Model.customers.Count==0)
+@* *@
+@* @if (Model.customers.Count==0) *@
+@* *@
+@* { *@
+@* *@
+@*     <p> No One rented this Movie</p> *@
+@* } *@
+@* *@
+@* else *@
+@* { *@
+@*     <ul> *@
+@*          *@
+@*         @foreach (var customer_name in Model.customers) *@
+@*         { *@
+@*             <li> @customer_name.Name</li> *@
+@*         } *@
+@*     </ul> *@
+@* } *@
 
+
+
+@*  
+working for Customers page
+
+*@
+@if (Model.Customers.Count==0)
 {
-
-    <p> No One rented this Movie</p>
+    <p> <h3>There is no Customer Exist In a database </h3></p>
 }
 
 else
 {
-    <ul>
-        
-        @foreach (var customer_name in Model.customers)
+    <table  class="table table-bordered table-hover">
+        @foreach (var customersName in Model.Customers)
+
+
+
         {
-            <li> @customer_name.Name</li>
+
+        <tr > @customersName</tr>
         }
-    </ul>
+
+
+
+    </table>
+
+
+
 }
 
-@if (Model.customers.Count==0)
-{
-    <table class="table table-bordered table-hover"> @Model.</table>
-}
+
+   
+ 
